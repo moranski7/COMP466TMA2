@@ -1,0 +1,74 @@
+Part 1 Test Case
+
+Test Sign Up #1
+User Name: user
+Email: user@test.com
+Password: testtest
+Confirm Password: testtest
+
+Expected Results: Error. User Name already in use.
+
+Test Sign Up #2
+User Name: user6
+Email: user@test.com
+Password: testtest
+Confirm Password: testtest
+
+Expected Results: Error. Email already in use.
+
+Test Sign Up #3
+User Name: user6
+Email: user6@test.com
+Password: test2test
+Confirm Password: testtest
+
+Expected Results: Error. Password does not match confirm password.
+
+Test Sign Up #4
+User Name: moranski
+email: moranski@test.com
+password: testtest
+Cofirm Password: testtest
+
+Expected Result: redirect to login.
+
+Test Log In #1
+Click submit without inputing data
+
+Expected Result: Please fill in userName
+
+Test Log In #2
+User Name: user
+Password: 
+
+Expected Result: Please fill in password
+
+Test Log In #3
+User Name: user4
+Password:testy
+
+Expected Result: User/Password not correct
+
+Test Log In #4
+User Name: userr4
+Password: testtest
+
+Expected Result: User/Password not correct
+
+Test Log In #5
+User Name: moranski
+Password: testtest
+
+Tests for logged In
+Add URL: "http://google.ca/" Expected Result: add. PASS
+Add URL: "http://google.ca/" Expected Result: Error. Duplicate url. PASS
+Add URL: "ca.yahoo.ca/" Expected Result: Error. Expected http://  PASS
+Add URL: "http://yaaahoooooooooooooo.com" Expected Result: Error. Not a valid url. PASS
+Add URL: "http://ca.yahoo.ca" Expected Result: add PASS
+Edit URL: "http://google.ca/" => "http://ca.yahoo.ca/" Expected Result:Error. Duplicate url. PASS
+Edit URL: "http://google.ca/" => "http://yaaahoooooooooooooo.com" Expected Result: Error. Not a valid url. PASS
+Edit URL: "http://google.ca/" => "https://www.quora.com/" Expected Result: Changed PASS
+Delete URL: "ID: 999999" Expected Result: Error. No matching id. PASS
+Delete URL: "https://www.quora.com/" Expected Result: deleted. PASS
+Logout Expected Result: redirect to welcome page. PASS
+

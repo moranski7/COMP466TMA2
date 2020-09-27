@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>TMA 2</title>
+		<link rel="stylesheet" type="text/css" href="./shared/tma2.css"/>
+	</head>
+	<body>
+		<div class="naviCon">
+			<a href="./part1/part1.php">PART 1</a>
+			<div class="homeCon"><a href="#"><img src="./shared/icons/home.png" alt="home"></a></div>
+			<a id="part2Link" href="./part2/part2.php">PART 2</a>
+		</div>
+		<div class="coverPageTitle">
+			<h1 id="Top">COMP 466: Advanced Technologies For Web-Based System</h1>
+			<h2>Assignment #2</h2>
+		</div>
+		<div class= "coverPgData">
+				<div>
+					By: Michael G. Oranski
+					ID: 2743708
+				</div>
+				<div> Date Began: </div>
+				<div>Date Completed: </div>
+				<div>Est. Hrs: hours</div>
+		</div>
+		<img class="divider" src="./shared/images/divider.png" alt="divider"/>
+		<div class="mainSubNav">
+			<!--Add navigation option to various sections of page-->
+			<div><a href="#assignDescription">Assignment Description</a></div>
+			<div><a href="#analysisDesign">Analysis and Design</a></div>
+			<div><a href="#userGuide">User Guide</a></div>
+			<div><a href="#reference">Reference</a></div>
+		</div>
+		<div class="backTop">
+				<a href="#Top">Back to Top</a>
+		</div>
+		<div class="mainPageInfo">
+			<h2 id="assignDescription">Assignment Description</h2>
+			<p>This assignment consists of two parts.</p>
+			<div>
+				<h3>Part 1</h3>
+				<p>For this project, you will be using MySQL and PHP to develop a web application that provides an online bookmarking service to users on the Internet. The requirement are as follows:</p>
+				<ul>
+					<li>The web application should have a good thoughtful interface, with menus and/or navigation buttons.</li>
+					<li>It should have a name or logo shown across all pages.</li>
+					<li>It should begin with a welcome or greeting message and a list of ten most popular websites that users of the web application have bookmarked.</li>
+					<li>Once signed in, a list of bookmarks the user has made should be displayed, and the user can browse any web site in the list in a new browser tab or window by clicking a link to the site.</li>
+					<li>The user can add new websites to the list and edit and delete any of the existing ones in the list;</li>
+					<li>When adding or editing, user input needs to be validated using JavaScript, to make sure the URLs are not only correct but also active.</li>
+				</ul>
+				<p>Save Part 1 files in the directory TMA2/part1</p>
+			</div>
+			<div>
+				<h3>Part 2</h3>
+				<p>In this part of the assignment, you are required to develop a small-scale online learning management system that can be used to deliver online courses to learners.</p>
+				<p>To that end, you will have to think about what these online courses are, how they can they be developed and how they should be stored on the web server, how they can be retrieved from the server, how they should be delivered to a web browser, and then rendered/presented properly on the web browser.</p>
+				<p>The development of online courses is the collaboration of efforts of subject matter experts (SMEs) and experts in computing and web technology. It is very common that those SMEs do not know much about computing, and don’t know how to use HTML and other web technologies needed to present an attractive course, but they should be quite comfortable with languages and terms used in education. So, the first technical step you need to take is to design a SME-friendly language for marking up educational materials, EML in our term (just another XML like you created for marking up your resume), for the SMEs to use. The EML you design may be a comprehensive one for marking up the contents for an entire course, or several XML languages in small scale for different components of a course. For example, you may have an EML for a lesson/lecture delivered in just a teaching/learning session, an EML for marking up quizzes, and an EML for marking up assignments, etc. You may look at some existing languages by searching for educational markup language in Google or other search engine.</p>
+				<p>After SMEs (for this assignment, you will be the SME) have written the course contents in your EML(s), the documents must be stored on the server before they can be delivered to the learners on the web. You may think that you can save each of the documents written in your EML as a file, like the resume file you wrote for assignment 1, but this is not practical. Files may work when there is just one or only a few learning documents, but when there are many, as happens in practical situations, the documents become unmanageable. That’s why we need a database.</p>
+				<p>The next technical step is to design the database table or tables. Over the years, I have seen different designs from students in the course. The most simple and straightforward one is to have a single table. In the table each row contains information for a lesson or quiz, including the actual content written in your EML. To make the learning contents retrievable and manageable, you will need fields to identify the course and the unit the lesson or quiz belongs to. You may also keep the details of the courses and units in the same table for the purpose of this assignment project, though you wouldn’t do that in practice because it is really inefficient; in a real world situation is to have separate tables to store information about courses and units.</p>
+				<p>To deliver the course contents (lessons and quizzes in our context) in an LMS, you will need a user management module to allow learners to register and get an account in the system, like you have done in part 1 of this assignment, and then allow registered learners to login. A user who has logged into the system can then view a list of lessons available to select and a list of selected lessons and start or continue to study a selected lesson.</p>
+				<p>To present a lesson to a learner, the backend of your LMS will need to navigate through the database to find the right lesson or quiz that the learner has requested, and them retrieve the actual content in EML. For the content to be properly rendered or presented on learner’s browser, you need to translate the content in your EML to HTML. We call this process parsing. Instead of using XSLT as you did for the first assignment, parsing EML to HTML needs to be done with PHP on the server-side, which is the last important technical step for this project – to write a parser in PHP.</p>
+				<p>When doing this project, or any project for the assignments, you must take a system approach.Save all files related to Part 2 in the directory TMA2/part2.</p>
+			</div>
+		</div>
+		<div class="mainPageInfo">
+			<h2 id="analysisDesign">Analysis and Design</h2>
+			<h3>Part 1</h3>
+			<p>Part 1 of the project was designed and completed using the agile/scrum development methodology. The agile/scrum development methodology is a project management system that relies on incremental development. This incremental development is achieved by dividing the work into cycles of short work periods called sprints. Each sprint consists of planning, analysis, coding and review. For the sake of this project each sprint time length is one day long.</p>
+			<p>The analysis of Part 1 has resulted in the following requirements:</p>
+			<ul>
+				<li>The web site must have a name and/or logo across all the pages.</li>
+				<li>The web site must have a welcome/greeting message when not logged in.</li>
+				<li>The web site must have a list of ten most popular websites when not logged in.</li>
+				<li>The web site must allow users to log in.</li>
+				<li>The web site must allow users to register.</li>
+				<li>The web site must store the user’s information.</li>
+				<li>The web site must store the user’s password as a hash.</li>
+				<li>The user should be able to switch between the register and login page.</li>
+				<li>The website must display the user’s bookmarks in a list when logged in.</li>
+				<li>The user must be able to visit any website in their bookmark list.</li>
+				<li>The website must be able to open a new tab when opening a link.</li>
+				<li>The user must be able to add bookmarks to their list.</li>
+				<li>The user must be able to edit bookmarks in their list.</li>
+				<li>The user must be able to remove bookmarks in their list.</li>
+				<li>The website must make sure that the user’s bookmark is active using JavaScript.</li>
+				<li>The user must be able to log out.</li>
+				<li>The website interface must be clean and organized.</li>
+				<li>The website should contain instructions how to use the website when logged in.</li>
+				<li>The website should give each bookmark an id for easy selection.</li>
+				<li>The website will not contain any personal information beyond requiring a user’s email.</li>
+			</ul>
+			<h4>Difficulty</h4>
+			<p>One of the requirements was not able to be fulfilled. This requirement was: “The website must make sure that the user’s bookmark is active using JavaScript”. This requirement is not possible to fulfill in JavaScript “due to the same-origin policy that browsers have which prevents cross-domain calls”. This same-origin policy is called the CORS policy which is indented to allow the host to restrict which websites may access the data. Some strategies to work around the error have been attempted using a proxy or adding “Access-Control-Allow-Origin” on the server but all resulted in the following error: “Cross-Origin request blocked: The same origin policy prohibits the reading of the external resource at htt://…..  (Reason: CORS Header 'Access-Control-Allow-Origin' is missing).” The last attempt to fulfill the requirement was implementing the requirement in php which was successful.</p>
+			<h3>Part 2</h3>
+			<p>Part 2 of the project was designed and completed using the waterfall development methodology. The waterfall development methodology is a project management system that breaks down the project activities into linear sequential phases. Each of these phases depends on the deliverables of the previous phase. These phases are:</p>
+			<ol>
+				<li>Requirements</li>
+				<li>Design</li>
+				<li>Implementation</li>
+				<li>Verification</li>
+				<li>Maintenance</li>
+
+			</ol>
+			<h4>Purpose</h4>
+			<p>The purpose of part 2 is the development of a small-scale online learning management system (LMS) that can be used to deliver online courses. These online courses are designed using a type of markup language called EML. EML enables subject matter experts (SME) to markup the contents of a course without requiring in-depth knowledge of computing and web technologies.  These EMLs are stored on a database on the server for optimal performance.</p>
+			<h4>Requirements</h4>
+			<p>The analysis of Part 2 has resulted in the following requirements: <a href="./shared/requirements/Requirements.xlsx" target="_blank">requirements.xlsx</a></p>
+			<h4>Design</h4>
+			<p>The database has the following relations:</p>
+			<img src="./shared/diagrams/Database Relationship.png" id="dbrelations" alt="Database relations" />
+			<p>Flow of data within the LMS:</p>
+			<div>
+				<h5>Login Dataflow</h5>
+				<img src="./shared/diagrams/Dataflow/1. Login DFD.png" class="dataFlowDia" alt="Dataflow 1" />
+			</div>
+			<div>
+				<h5>Home Page Dataflow</h5>
+				<img src="./shared/diagrams/Dataflow/2. Load Home Page DFD.png" class="dataFlowDia" alt="Dataflow 2" />
+			</div>
+			<div>
+				<h5>Enroll Dataflow</h5>
+				<img src="./shared/diagrams/Dataflow/3. EML Doc DFD.png" class="dataFlowDia" alt="Dataflow 3" />
+			</div>
+			<div>
+				<h5>Start Lesson Dataflow</h5>
+				<img src="./shared/diagrams/Dataflow/4. Select Lesson DFD.png" class="dataFlowDia" alt="Dataflow 4" />
+			</div>
+			<p>The wireframe of the user interface:</p>
+			<div>
+				<h5>tma2 (start)</h5>
+				<img src="./shared/diagrams/Rough Draft/1. TMA Home (rough).png" class="wireFrames1" alt="wireframe 1" />
+			</div>
+			<div>
+				<h5>Welcome</h5>
+				<img src="./shared/diagrams/Rough Draft/1.a Welcome.png" class="wireFrames1" alt="wireframe 2" />
+			</div>
+			<div>
+				<h5>Register</h5>
+				<img src="./shared/diagrams/Rough Draft/2. Part 2 Register (rough).png" class="wireFrames1" alt="wireframe 3" />
+			</div>
+			<div>
+				<h5>Enroll</h5>
+				<img src="./shared/diagrams/Rough Draft/3. Part 2 Enroll (rough).png" class="wireFrames2" alt="wireframe 4" />
+			</div>
+			<div>
+				<h5>Enrolled</h5>
+				<img src="./shared/diagrams/Rough Draft/4. Part 2 Enrolled (rough).png" class="wireFrames2" alt="wireframe 5" />
+			</div>
+			<div>
+				<h5>Lesson</h5>
+				<img src="./shared/diagrams/Rough Draft/5. Part 2 EML Displayed (rough).png" class="wireFrames2" alt="wireframe 6" />
+			</div>
+			<h4>Tables</h4>
+			<p>The SQL script that can be used to create the database is as followed:</p>
+			<div class="sqlCode">
+				<code>CREATE TABLE `images` ( `Image Id` INT NOT NULL AUTO_INCREMENT , `Image Name` VARCHAR(200) NOT NULL , `Image` LONGTEXT NOT NULL , PRIMARY KEY (`Image Id`))</code>
+			</div>
+			<div class="sqlCode">
+				<code>CREATE TABLE `lessons` ( `Course ID` INT NOT NULL AUTO_INCREMENT , `EML Doc` LONGTEXT NOT NULL , `Name` MEDIUMTEXT NOT NULL , `Subject` TINYTEXT NOT NULL , `Type` VARCHAR(10) NOT NULL , PRIMARY KEY (`Course ID`));</code>
+			</div>
+			<div class="sqlCode">
+				<code>CREATE TABLE `students` ( `Age` SMALLINT(6) NOT NULL , `email` VARCHAR(75) NOT NULL , `firstName` VARCHAR(60) NOT NULL , `ID` INT NOT NULL AUTO_INCREMENT , `lastName` VARCHAR(60) NOT NULL , `password` MEDIUMTEXT NOT NULL , `userName` MEDIUMTEXT NOT NULL , PRIMARY KEY (`ID`));</code>
+			</div>
+			<div class="sqlCode">
+				<code>CREATE TABLE `lesson registered` ( `Course ID` INT NOT NULL , `Student ID` INT NOT NULL , `Enrolled` DATE NOT NULL , PRIMARY KEY (`Course ID`, `Student ID`));</code>
+			</div>
+			<div class="sqlCode">
+				<code>CREATE TABLE `lesson description` ( `Course ID` INT NOT NULL , `Description` MEDIUMTEXT NOT NULL )); </code>
+			</div>
+			<div class="sqlCode">
+				<code>ALTER TABLE `lesson registered` ADD CONSTRAINT `Course ID` FOREIGN KEY (`Course ID`) REFERENCES `lessons`(`Course ID`) ON DELETE RESTRICT ON UPDATE RESTRICT; ALTER TABLE `lesson registered` ADD CONSTRAINT `ID` FOREIGN KEY (`Student ID`) REFERENCES `students`(`ID`) ON DELETE RESTRICT ON UPDATE RESTRICT;</code>
+			</div>
+			<div class="sqlCode">
+				<code>ALTER TABLE `lesson description` ADD CONSTRAINT `Course ID` FOREIGN KEY (`Course ID`) REFERENCES `lessons`(`Course ID`) ON DELETE RESTRICT ON UPDATE RESTRICT;</code>
+			</div>
+			<h4>EML</h4>
+			<p>Two separate EMLs were designed for the LMS. They are lesson EML and Quiz EML. The lesson EML designed for this course has the following tags:</p>
+			<table>
+				<tr>
+					<th>Tag</th>
+					<th>Description</th>
+					<th>Example</th>
+				</tr>
+				<tr>
+					<td>&lt;lesson&gt;</td>
+					<td>The first tag in an EML document states that the document is a lesson document and should be parsed accordingly.</td>
+					<td class="mainCode"><p>&lt;lesson&gt;</p> //content of lesson <p>&lt;/lesson&gt;</p></td>
+				</tr>
+				<tr>
+					<td>&lt;title&gt;</td>
+					<td>The tag presents the title of an EML document.</td>
+					<td class="mainCode"><p>&lt;lesson&gt;</p><p>&lt;title&gt;Unit 1&lt;/title&gt;</p> //Content of lesson</td>
+				</tr>
+				<tr>
+					<td>&lt;subTitle&gt;</td>
+					<td>The tag presents the subtitle of an EML document.</td>
+					<td class="mainCode"><p>&lt;lesson&gt;</p><p>&lt;title&gt;Unit 1&lt;/title&gt;</p><p>&lt;subTitle&gt;Chapter 1: Internet Basic&lt;/subTitle&gt;</p> //Content of lesson</td>
+				</tr>
+				<tr>
+					<td>&lt;content&gt;</td>
+					<td>The tag represents the contents of a lesson. Each content may contain the following: topics, paragraphs, definitions, images, lists, external links, and code examples.</td>
+					<td class="mainCode"><p>&lt;content&gt;</p>//Body of Content<p>&lt;/content&gt;</p></td>
+				</tr>
+				<tr>
+					<td>&lt;topic&gt;</td>
+					<td>The tag presents the current topic of the lesson and gives a general idea of what is being taught.</td>
+					<td class="mainCode"><p>&lt;content&gt;</p><p>&lt;topic&gt;Web Basic&lt;/topic&gt;</p> //Body of Content<p>&lt;/content&gt;</p></td>
+				</tr>
+				<tr>
+					<td>&lt;par&gt;</td>
+					<td>The tag presents a paragraph within the lesson. It contains the actual information being taught. Some parts may be bolded and/or italic. </td>
+					<td class="mainCode">&lt;par&gt;The Internet is a world-wide communication network of computers. To get information from the Internet, a user will commonly use a software application called a <bold>web browser</bold> to view a web page  or site.&lt;/par&gt;</td>
+				</tr>
+				<tr>
+					<td>&lt;def&gt;</td>
+					<td>The tag presents the definitions within the lesson. It is presented with a different background to separate it from other content. Some parts may be bolded and/or italic.</td>
+					<td class="mainCode">&lt;def&gt;&lt;bold>URI&lt;/bold>s(Uniform Resource Identifiers) identify resources on the Internet.&lt;/def&gt;</td>
+				</tr>
+				<tr>
+					<td>&lt;bold&gt;</td>
+					<td>Word(s) are bolded.</td>
+					<td class="mainCode">&lt;bold>URI&lt;/bold></td>
+				</tr>
+				<tr>
+					<td>&lt;italic&gt;</td>
+					<td>Word(s) are italic.</td>
+					<td class="mainCode">&lt;italic&gt;http://&lt;/italic&gt;</td>
+				</tr>
+				<tr>
+					<td>&lt;image&gt;</td>
+					<td>The tag presents an image to the students. Each image has a name and a caption.</td>
+					<td class="mainCode"><p>&lt;image&gt</p>//Image content<p>&lt;/image&gt</p></td>
+				</tr>
+				<tr>
+					<td>&lt;name&gt;</td>
+					<td>The tag presents the name of the image. The name is used to retrieve the image from the database.</td>
+					<td class="mainCode"><p>&lt;image&gt</p>&lt;name&gt;three_tier.png&lt;/name&gt;<p>&lt;/image&gt;</p></td>
+				</tr>
+				<tr>
+					<td>&lt;caption&gt;</td>
+					<td>The tag presents the caption of the image which describes the image presented underneath.</td>
+					<td class="mainCode"><p>&lt;image&gt</p><p>&lt;name&gt;three_tier.png&lt;/name&gt;</p>&lt;caption&gt;Fig. 1.10 Three-tier architecture.&lt;/caption&gt;<p>&lt;/image&gt;</p></td>
+				</tr>
+				<tr>
+					<td>&lt;external&gt;</td>
+					<td>The tag presents a link to an outside resource that is relevant to the lesson and requires the attribute “link” which contains the address to the website.</td>
+					<td class="mainCode">&lt;external link="https://www.w3schools.com/js/js_reserved.asp">here&lt;/external></td>
+				</tr>
+				<tr>
+					<td>&lt;codeExample&gt;</td>
+					<td>The tag presents any coding example. The coding examples are displayed in a different font and background color to separate them from the rest of the contents.</td>
+					<td class="mainCode">&lt;codeExample&gt;<p>5 + 8;</p><p>x = 7;</p><p>y = (5 <= 4);</p>&lt;/codeExample&gt;</td>
+				</tr>
+				<tr>
+					<td>&lt;list&gt;</td>
+					<td>Contains bullets point list.</td>
+					<td class="mainCode">&lt;list&gt;<p>//list content</p>&lt;/list&gt;</td>
+				</tr>
+				<tr>
+					<td>&lt;bullet&gt;</td>
+					<td>Is a bullet point of a list.</td>
+					<td class="mainCode">&lt;list&gt;<p>&lt;bullet&gt;Values&lt;/bullet&gt;</p><p>&lt;bullet&gt;Operators&lt;/bullet&gt;</p>&lt;/list&gt;</td>
+				</tr>
+			</table>
+
+			<p>The quiz EML has the following tags:</p>
+			<table>
+				<tr>
+					<th>Tag</th>
+					<th>Description</th>
+					<th>Example</th>
+				</tr>
+				<tr>
+					<td>&lt;quiz&gt;</td>
+					<td>The first tag in an EML document states that the document is a quiz document and should be parsed accordingly.</td>
+					<td class="mainCode">&lt;quiz&gt;<p>//Quiz content</p>&lt;/quiz&gt;</td>
+				</tr>
+				<tr>
+					<td>&lt;title&gt;</td>
+					<td>The second tag in an EML Document gives the main title of the quiz.</td>
+					<td class="mainCode">&lt;title&gt;Unit 1 Quiz&lt;/title&gt;</td>
+				</tr>
+				<tr>
+					<td>&lt;instruction&gt;</td>
+					<td>The third tag gives the instructions for the quiz.</td>
+					<td class="mainCode">&lt;instruction>This is a multiple choice quiz. Each question has four choices. Read each question and answer choice carefully before choosing the one answer per question. When done press submit at the bottom of the page.&lt;/instruction></td>
+				</tr>
+				<tr>
+					<td>&lt;question&gt;</td>
+					<td>The tag represents the question that is composed of the following: what is being asked, four choices, and the answer.</td>
+					<td class="mainCode">&lt;question&gt;<p>//Question content</p>&lt;/question&gt;</td>
+				</tr>
+				<tr>
+					<td>&lt;ask&gt;</td>
+					<td>What the question is asking the student.</td>
+					<td class="mainCode">&lt;ask>HTML stands for what?&lt;/ask></td>
+				</tr>
+				<tr>
+					<td>&lt;choice&gt;</td>
+					<td>The tag presents one of four multiple choices. The order of choice determines whatever the choice is  A, B, C, or D.</td>
+					<td class="mainCode"><p>&lt;choice>PUT&lt;/choice></p><p>&lt;choice>TAKE&lt;/choice></p><p>&lt;choice>POST&lt;/choice></p><p>&lt;choice>STEAL&lt;/choice></p></td>
+				</tr>
+				<tr>
+					<td>&lt;answer&gt;</td>
+					<td>The tag presents the answer to the question. The answer is not visible until the student presses submit.</td>
+					<td class="mainCode">&lt;answer>C&lt;/answer></td>
+				</tr>
+			</table>
+		</div>
+		<div class="mainPageInfo">
+			<h2 id="userGuide">User Guide</h2>
+			<p>To view the web site on a live server, please click this link: <a href="http://184.148.169.80:8088/COMP466/Assignments/TMA2/tma2.htm" target="_blank">http://184.148.169.80:8088/COMP466/Assignments/TMA2/tma2.htm</a>.
+			To view the website without visiting another server, please download the file onto a local http server.  The server also requires a MySQL server connection. XAMPP is recommended for ease of installation. When XAMPP is installed and running place the files in /xampp/htdocs. Import the sql database located within the download. To access the assignment in the web browser type the following in the address bar: 'http://localhost:8000/ TMA2'. Click on tma2.htm to view the assignment. </p>
+			<p>After placing the TMA2 folder in htdocs, make sure TMA2 contains the following:</p>
+			<ul>
+				<li>Part1</li>
+				<li>Part2</li>
+				<li>Shared</li>
+				<li>tma2.htm</li>
+			</ul>
+			<p>TMA2/part1 folder should contain the following:</p>
+			<ul>
+				<li>part1.php</li>
+				<li>media</li>
+				<li>script</li>
+				<li>server</li>
+			</ul>
+			<p>TMA2/part1/media should contain the following:</p>
+			<ul>
+				<li>Digiary.png</li>
+			</ul>
+			<p>TMA2/part1/script should contain the following:</p>
+			<ul>
+				<li>login.js</li>
+				<li>main.js</li>
+				<li>part1.js</li>
+				<li>signup.js</li>
+			</ul>
+			<p>TMA2/part1/server should contain the following:</p>
+			<ul>
+				<li>connect.php</li>
+				<li>login.php</li>
+				<li>signup.php</li>
+				<li>main</li>
+			</ul>
+			<p>TMA2/part1/server/main should contain the following:</p>
+			<ul>
+				<li>add.php</li>
+				<li>delete.php</li>
+				<li>edit.php</li>
+				<li>logout.php</li>
+				<li>main.php</li>
+				<li>part2Redirect.php</li>
+			</ul>
+			<p>TMA2/part2 should contain the following:</p>
+			<ul>
+				<li>media</li>
+				<li>page</li>
+				<li>script</li>
+				<li>part2.php</li>
+			</ul>
+			<p>TMA2/part2/media should contain the following:</p>
+			<ul>
+				<li>LearningVault.png</li>
+			</ul>
+			<p>TMA2/part2/page should contain the following:</p>
+			<ul>
+				<li>connect.php</li>
+				<li>signup.php</li>
+				<li>main</li>
+			</ul>
+			<p>TMA2/part2/page/main should contain the following:</p>
+			<ul>
+				<li>eml.php</li>
+				<li>enroll.php</li>
+				<li>enrolled.php</li>
+				<li>logout.php</li>
+			</ul>
+			<p>TMA2/part2/script should contain the following:</p>
+			<ul>
+				<li>main.js</li>
+				<li>part2.js</li>
+				<li>signup.js</li>
+			</ul>
+			<p>TMA2/shared should contain the following:</p>
+			<ul>
+				<li>diagrams</li>
+				<li>icons</li>
+				<li>images</li>
+				<li>requirements</li>
+				<li>Test</li>
+				<li>References.txt</li>
+				<li>tma2.css</li>
+			</ul>
+			<p>TMA2/shared/diagrams should contain the following:</p>
+			<ul>
+				<li>Dataflow</li>
+				<li>Rough Draft</li>
+				<li>Database Relationship.png</li>
+			</ul>
+			<p>TMA2/shared/diagrams/Dataflow should contain the following:</p>
+			<ul>
+				<li>1.Login DFD.png</li>
+				<li>2.Load Home Page DFD.png</li>
+				<li>3.EML Doc DFD.png</li>
+				<li>4.Select Lesson DFD.png</li>
+			</ul>
+			<p>TMA2/shared/diagrams/Rough Draft should contain the following:</p>
+			<ul>
+				<li>1. TMA Home (rough).png</li>
+				<li>1.a Welcome.png</li>
+				<li>2.Part 2 Register (rough).png</li>
+				<li>3. Part 2 Enroll (rough).png</li>
+				<li>4. Part 2 Enrolled (rough).png</li>
+				<li>5. Part 2 EML Displayed (rough).png</li>
+			</ul>
+			<p>TMA2/shared/icons should contain the following:</p>
+			<ul>
+				<li>Hamburger_icon.png</li>
+				<li>home.png</li>
+				<li>return.png</li>
+			</ul>
+			<p>TMA2/shared/images should contain the following:</p>
+			<ul>
+				<li>divider.png</li>
+			</ul>
+			<p>TMA2/shared/requirements should contain the following:</p>
+			<ul>
+				<li>Requirements.xlsx</li>
+			</ul>
+			<p>TMA2/shared/Test should contain the following:</p>
+			<ul>
+				<li>Part1TestCase.txt</li>
+			</ul>
+			<p>Organization of TMA2 and its subfolders should not be modified because the website could be affected. The project has been tested on the following browsers: Firefox, Chrome, Opera,  Microsoft Edge, and Waterfox.</p>
+		</div>
+		<div class="mainPageInfo">
+			<h2 id="reference">References</h2>
+		</div>
+		<!--Need to add back to top button.-->
+	</body>
+</html>

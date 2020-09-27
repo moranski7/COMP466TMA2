@@ -1,0 +1,510 @@
+body {
+	background-color: #F0F8FF;
+	font-size: 16px;
+}
+
+/**********************navigation bar (shared)*************************/
+.naviCon {
+	border: 4px outset black;
+	width: 100.4%;
+	height: 50px;
+	margin-left: -8px;
+	margin-top: -0.5%;
+	background-color: silver;
+}
+.naviCon a {
+	position: relative;
+	float: left;
+	margin-left: 15%;
+	margin-top: -0.5%;
+	font-size: 60px;
+	font-weight: bold;
+	font-family: "Times New Roman", Times, serif;
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+.naviCon a:active {color: black;}
+#part2Link {
+	float: right;
+	margin-right: 15%;
+	margin-top: -4.9%;
+}
+.homeCon {
+	background-color: silver;
+	border: 2px solid black;
+	width: 9%;
+	height: 150px;
+	border-radius: 50%;
+	text-align: center;
+	position: relative;
+	margin: 0 auto;
+	padding: 3px;
+	z-index: 1;
+	margin-top: -4%;
+}
+.homeCon a {
+	width:50px;
+	height:50px;
+	position: relative;
+	margin-top: -6%;
+	display: inline-block;
+}
+.homeCon img {
+	margin-left: 30%;
+	width:90px;
+	height:90px;
+}
+
+/*************************form (shared)*************************/
+.formCon {
+	width: 500px;
+	margin: 0 auto;
+	font-size: 20px;
+}
+.formCon input {
+	float: right;
+	font-size: 20px;
+}
+.formCon div {
+	width: 375px;
+	height: 60px;
+}
+.formButtonsCon {text-align: center;}
+.formButtonsCon input {
+	float: none;
+	margin-top:0.5em;
+	width: 100px;
+	height: 50px;
+	border-radius: 10%;
+	font-weight: bold;
+	font-family: "Times New Roman";
+    background-color: silver;
+}
+.formButtonsCon input[type=submit] {margin-left: 3.5em;}
+.formButtonsCon input[type=button] {margin-left:0.5em;}
+
+
+/************************************Main************************/
+.coverPageTitle {
+	width: 90%;
+	text-align: center;
+	font-size: 2em;
+	margin-top: 1em;
+	margin-left: 3em;
+}
+.coverPageTitle h2 {
+	margin-left: -0.5em;
+}
+.coverPgData {
+	width: 11em;
+	text-align: center;
+	margin-left: 45%;
+}
+.divider {
+	width: 900px;
+	height: 60px;
+	margin-left: 26%;
+}
+.mainSubNav{
+	text-align: center;
+	font-size: 28px;
+	font-weight: bold;
+}
+.mainSubNav a{text-decoration: none;}
+.mainPageInfo {margin-left: 5%;}
+.backTop {
+	width: 7em;
+	height: 2.9em;
+	border-style: none;
+	border-radius: 0.5em;
+	background-color: rgba(192,192,192, 0.2); /*silver*/
+	font-size: 1em;
+	text-align: center;
+	z-index: 1;
+	position: fixed;
+	margin-left: 47%;
+	margin-top: 17.0%;
+}
+.backTop a{
+	text-decoration: none;
+	color: black;
+}
+.backTop:hover {background-color: rgba(192,192,192, 1);} /*silver*/
+#dbrelations {
+ width: 1040px;
+ height: 320px;
+}
+.dataFlowDia {
+	width: 1090px;
+	height: 640px;
+}
+.wireFrames1 {
+	width: 708px;
+	height: 336px;
+}
+.wireFrames2 {
+	width: 742px;
+	height: 410px;
+}
+td.mainCode {
+	text-align: left;
+	font-size: 1em;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	background-color: white;
+	margin-bottom: 0px;
+	width: 500px;
+}
+div.sqlCode {margin-bottom: 5px;}
+div.sqlCode code {background-color: white;}
+/**********************Part 1******************************************/
+.bannerCon img {
+	width:1800px;
+	height:275px;
+}
+#part1Banner{
+	margin-left: 3.5%;
+	margin-top: 1.5%;
+}
+#welcomeCon {
+	width: 1200px;
+	font-size: 26px;
+	margin: 0 auto;
+}
+.loginRegister {
+	width: 250px;
+	text-align: left;
+	position: relative;
+	margin: 0 auto;
+}
+.loginRegister button {
+	width: 120px;
+    height: 50px;
+    border-radius: 10%;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: "Times New Roman";
+    background-color: silver;
+}
+.demoCon h2 {margin-left: 24%;}
+.tenMostPopularCon {
+	width: 1000px;
+	height:330px;
+	border: 2px outset black;
+	background-color: white;
+	margin: 0 auto;
+	margin-top: -1%;
+	overflow:auto;
+}
+#signUpErrors {
+	font-size: 22px;
+	height: 30px;
+	color: red;
+	font-weight: bold;
+	margin-bottom: 0px;
+}
+.displayUsername {
+	width: 200px;
+	float: right;
+	font-size: 1.1em;
+	overflow:auto;
+}
+.bookmarkMenu {
+	cursor: pointer;
+	width: 100px;
+	margin-left: 21em;
+	overflow:auto;
+}
+.bookmarkMenu img {
+	width: 65px;
+	height: 65px;
+	margin-left: 0em;
+	z-index: 1;
+}
+.bookmarkMenu-content {
+	border: 2px outset silver;
+	display: none;
+	position: absolute;
+	width: 140px;
+	margin-left: -1.0em;
+	margin-top: -0.5em;
+	font-size: 2em;
+	text-align: center;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	background-color: silver;
+	z-index: 1;
+}
+.bookmarkMenu-content a{
+	color: black;
+	padding: 4px 8px;
+	display: block;
+	border: 2px outset silver;
+}
+.bookmarkMenu-content a:hover {background-color: #f1f1f1;}
+.bookmarkMenu:hover .bookmarkMenu-content {display: block;}
+.stagingArea {
+	width: 1000px;
+	height: 120px;
+	min-height: 120px;
+	margin-left: 28em;
+	margin-top: -4em;
+	overflow:auto;
+}
+.stagingArea form{
+	font-size: 1.1em;
+	margin-top: -1em;
+}
+.stagingArea input[type=submit] {
+	margin-left: 25em;
+	padding: 12px 16px;
+	border-radius: 25%;
+	font-size: 1.6em;
+}
+.urlInputCon {margin-top: -3em;}
+.urlInputCon input{
+	width: 25em;
+	height: 1.5em;
+	min-height: 0.9em;
+	margin-bottom: -10px;
+}
+.urlFormResult {
+	margin-top: 1em;
+}
+#editResult {
+	margin-top:2em;
+}
+.urlFormResult {
+	width: 1000px;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: red;
+}
+#bookmarkStorage {
+	width: 1000px;
+	height:400px;
+	min-width: 330px;
+	border: 2px outset black;
+	background-color: white;
+	margin: 0 auto;
+	overflow:auto;
+	margin-top: 1%;
+}
+.urlTable {
+	width: 100%;
+}
+.urlTable table, th, td {
+	border: 1px solid black;
+	font-size: 1.5em;
+	overflow: auto;
+}
+td {text-align: center;}
+
+/*******************Part 2********************************/
+#part2Banner {
+	margin-left: 2.5%;
+	margin-top: 0.5%;
+}
+#part2SignUpForm {
+	width: 825px;
+	min-width: 825px;
+}
+#part2SignUpForm div{
+	height: 50px;
+}
+#part2formButtonsCon {
+	margin-top:1.5em;
+	margin-left: 25%;
+}
+div.personalInfo {width: 820px;}
+div.subPersonalInfo {
+	float: right;
+	margin-top: -6.5%;
+}
+#passwordsCon {margin-top: 3em;}
+#confirmPasswordCon{width: 420px;}
+#signUpErrorsPart2 {
+	font-size: 22px;
+	height: 30px;
+	color: red;
+	font-weight: bold;
+	margin-top: 25px;
+	margin-left: 25%;
+}
+#studentIdPost {
+	width: 200px;
+	height: 150px;
+	margin-left: 1650px;
+}
+#studentIdPost h2 {margin-bottom: 0px;}
+#UtilityArea {
+	width: 1800px;
+	height: 560px;
+	margin-top: -152px;
+	margin-left: 50px;
+}
+.menu {
+	width: 200px;
+	height: 100px;
+}
+.menu label {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+#mainMenu {
+	border: 2px outset silver;
+	font-size: 1.5em;
+	text-align: center;
+	font-family: "Arial Black", Gadget, sans-serif;
+	cursor: pointer;
+}
+.subMenu {
+	height: 375px;
+	width: 300px;
+	margin-left: 83%;
+	margin-top: 1%;
+}
+.subMenu button {
+	font-size: 1.5em;
+	font-weight: bold;
+	background-color: silver;
+	font-family: "Arial Black", Gadget, sans-serif;
+	border-radius: 25%;
+	padding: 12px 16px;
+	margin-left: 25%;
+}
+#lessonDispalyResult {
+	height: 300px;
+	margin-top: 10px;
+}
+.Instructions {
+	width: 250px;
+	margin-top: -21%;
+	height: 300px;
+}
+#displayTitle {
+	margin-top: -20.5%;
+	margin-left: 35%;
+	font-size: 2.6em;
+	font-weight: bold;
+}
+.emlDisplayCon {
+	border: 4px inset silver;
+	background-color: white;
+	height: 375px;
+	width: 1200px;
+	min-width: 1200px;
+	margin-left: 14%;
+	margin-top: -21%;
+	overflow:auto;
+}
+.lessonTable {
+	width: 100%;
+}
+#registeredTable {
+	width: 100%;
+}
+.registerButtons {
+	width: 200px;
+	cursor: pointer;
+}
+.emlMenu {
+	width: 71px;
+	height: 71px;
+	cursor: pointer;
+}
+.emlMenu img {
+	width: 70px;
+	height: 70px;
+}
+.emlStagingCon {
+	border: 4px outset silver;
+	width: 1700px;
+	min-width: 1700px;
+	height: 570px;
+	overflow:auto;
+	margin-left: 100px;
+	margin-top: -70px;
+	background-color: rgb(250,250,250);
+	font-size: 1.5em;
+}
+.emlStagingCon h1 {text-align: center;}
+.emlStagingCon h2 {text-align: center;}
+.emlStagingCon h3 {
+	margin-left: 1em;
+	border-bottom: 1px;
+	border-bottom-style: solid;
+	border-color: black; 
+}
+.emlStagingCon p {margin-left: 1.1em;}
+.emlStagingCon strong {font-weight: bold;}
+.emlStagingCon code {
+	background-color: white;
+	font-weight: bold;
+}
+.lessonDef {
+	width: 1350px;
+	min-width: 1350px;
+	margin-bottom: 10px;
+	margin-left: 50px;
+	background-color: rgb(216,216,216);
+}
+.quizInstruction {
+	width: 1350px;
+	min-width: 1350px;
+	font-weight: bold;
+	margin: 0 auto;
+}
+.quizFormCon {
+	margin-top: 10px;
+	margin-left: 20px;
+}
+.quizForm input[type="submit"] {
+	width: 150px;
+	height: 55px;
+	font-size: 1.5em;
+	font-weight: bold;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	border-radius: 20%;
+	background-color: silver;
+	border-width: 4px;
+}
+.questionCon {margin-bottom: 10px;}
+.questionCon label {
+	font-weight: 500;
+	font-size: 1.1em;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+.questionCon select,option {
+	font-size: 1.1em;
+	cursor: pointer;
+}
+div.quizAnswer {
+	font-size: 1.2em;
+	display: none;
+	color: red;
+}
+#quizResultStaging {
+	margin-left: 20%;
+	margin-top: -2%;
+	font-size: 1.2em;
+	font-weight: bold;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	color: green;
+}
+
+/*Toshiba Laptop*/
+@media only screen and (max-device-width:1600px) {
+	.homeCon img {
+		margin-left: 20%;
+	}
+	#part2Link {
+		margin-right: 15%;
+		margin-top: -6.5%;
+	}
+}
+
+/*ChromeBook*/
+@media only screen and (max-device-width:1550px) {
+}
