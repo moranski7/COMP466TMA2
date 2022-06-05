@@ -126,8 +126,9 @@
 			while ($row = $result->fetch_array(MYSQLI_NUM)) {
 				$descript = getDescription ($conn, $row[0]);	//Gets the lessons description
 				echo "<script>createAttendOpt ('".$row[0]."',". //Sends the result to the javascript side to be displayed to screen
-					"'".$row[1]."', '".$row[2]."',".
+					"'".$row[2]."', '".$row[3]."',".
 					" '".$row[4]."', '$descript');</script>";
+					//Above line is sensitive to columns order of the sql table. If not working, check row content. Might be trying to load content instead of decription.
 
 			}
 			mysqli_stmt_close ($stmt);
