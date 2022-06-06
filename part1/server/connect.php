@@ -2,8 +2,10 @@
 	/* Used to connect to database.*/
 
 	$servername = "localhost";
-	$username = "moranski";
-	$password = "%5bU+VyV4?";
+	/*User will need to create a new user account in the sql database. 
+	Add the username and password to this file. Otherwise it won't work.*/
+	$username = "";
+	$password = "";
 	$db = "tma2part1";
 
 	$conn = mysqli_connect ($servername, $username, $password, $db);
